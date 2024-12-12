@@ -1,7 +1,7 @@
-/* General body styles */
+/* General body styles remain the same */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Weather-themed background */
+    background-image: url('https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); 
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -14,47 +14,96 @@ body {
     min-height: 100vh;
 }
 
-/* Styling for the main container */
+/* Main container styling remains */
 div {
-    background-color: rgba(0, 0, 0, 0.7); /* Dark background with some transparency */
+    background-color: rgba(0, 0, 0, 0.7); 
     padding: 20px;
-    margin: 20px;
+    margin: 20px auto; /* Center horizontally */
     border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
+    width: 90%; /* Nearly full width of the parent container */
+    max-width: 1300px; /* Remove max-width constraint */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    min-height: 150px; /* Optional: set a minimum height */
 }
-
-/* Header styles */
-h1 {
-    font-size: 2.5rem;
-    color: #ffcc00;
+/* Weather info container styling for multi-day layout */
+#weather-info {
+    margin-top: 20px;
+    display: flex; /* Flexbox for horizontal layout */
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+    gap: 15px; /* Space between child elements */
+    justify-content: center; /* Center-align child elements within the container */
+    align-items: center; /* Align items vertically */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
     text-align: center;
-    margin-bottom: 20px;
+    overflow-x: visible; /* Allow horizontal scrolling if items overflow */
+}
+/* Individual weather cards */
+.weather-card {
+    background-color: rgba(255, 255, 255, 0.1); /* Light overlay for contrast */
+    color: #fff;
+    border: 1px solid #ccc; /* Border for separation */
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px; /* Fixed width for cards */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Input and button container */
-input, button {
+/* Weather card hover effect */
+.weather-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Weather card image styling */
+.weather-card img {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+}
+
+/* Individual card title styling */
+.weather-card h3 {
+    font-size: 1.2rem;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+/* Card text styling */
+.weather-card p {
     font-size: 1rem;
-    padding: 10px;
-    margin: 10px 5px;
-    border: none;
-    border-radius: 5px;
+    margin: 5px 0;
 }
 
-/* Specific styling for the input field */
-input {
-    width: 60%;
-    margin-right: 10px;
-}
-
-/* Styling for the search button */
+/* Button styles remain unchanged */
 button {
     background-color: #007bff;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
+#history-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#history-list li {
+    cursor: pointer;
+    padding: 2px 4px; /* Small padding to closely match the word size */
+    margin: 0; /* No margin to avoid extra spacing */
+    display: inline-block; /* Ensures the border adjusts to the word size */
+    border: 1px solid #ccc;
+}
+
+#history-list li:hover {
+    background-color: #f0f0f0;
+    border-color: #999;
+}
+
 
 button:hover {
     background-color: #0056b3;
@@ -70,39 +119,16 @@ button:hover {
     background-color: #c82333;
 }
 
-/* Weather information display */
-#weather-info {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8); /* Darker background for weather info */
-    border-radius: 10px;
-    text-align: center;
+/* Input styles remain unchanged */
+input, button {
+    font-size: 1.5rem;
+    padding: 10px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
 }
 
-/* Styling for the weather icon */
-#weather-info img {
-    width: 50px;
-    height: 50px;
-    margin-top: 10px;
-}
-
-/* Text styling */
-p {
-    font-size: 1.2rem;
-    margin: 5px 0;
-}
-#history-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-#history-list li {
-    cursor: pointer;
-    padding: 5px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-}
-
-#history-list li:hover {
-    background-color: #f0f0f0;
+input {
+    width: 60%;
+    margin-right: 10px;
 }
